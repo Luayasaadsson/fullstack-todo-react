@@ -1,6 +1,6 @@
 // src/components/RegisterForm.tsx
 import { useState } from "react";
-import { registerUser } from "../api/usersApi";
+import { registerUser } from "../../api/usersApi";
 
 const RegisterForm = () => {
   const [email, setEmail] = useState("");

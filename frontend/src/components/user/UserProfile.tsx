@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { getUser } from "../api/usersApi";
-import { RootState } from "./../store/store";
+import { getUser } from "../../api/usersApi";
+import { RootState } from "../../store/store";
 
 interface User {
   email: string;

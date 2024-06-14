@@ -1,7 +1,8 @@
-import RegisterForm from "./components/RegisterForm";
-import LoginForm from "./components/LoginForm";
-import UserProfile from "./components/UserProfile";
-import UpdateUserForm from "./components/UpdateUserForm";
+import RegisterForm from "./components/user/RegisterForm";
+import LoginForm from "./components/user/LoginForm";
+import UserProfile from "./components/user/UserProfile";
+import UpdateUserForm from "./components/user/UpdateUserForm";
+import DeleteUser from "./components/user/DeleteUser";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <LoginForm />
       <UserProfile />
       <UpdateUserForm />
+      <DeleteUser />
     </>
   );
 }

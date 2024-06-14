@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { updateUser } from "../api/usersApi";
-import { RootState } from "./../store/store";
+import { updateUser } from "../../api/usersApi";
+import { RootState } from "../../store/store";
 
 const UpdateUserForm: React.FC = () => {
   const [email, setEmail] = useState<string>("");
