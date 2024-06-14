@@ -28,7 +28,7 @@ export const createTodo = async (
 };
 
 // Hämtar alla todos för den inloggade användaren
-export const fetchTodos = async (token: string): Promise<Todo[]> => {
+export const fetchTodos = async (token: string) => {
   try {
     const response = await api.get("/", {
       headers: {
