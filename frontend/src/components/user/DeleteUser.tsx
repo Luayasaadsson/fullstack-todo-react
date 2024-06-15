@@ -1,30 +1,27 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { AppDispatch } from "../../store/store";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteUser } from "../../api/usersApi";
 import { RootState } from "../../store/store";
+import { logoutUser } from "../../store/slices/userSlice";
+import { useNavigate } from "react-router-dom";
 
-const DeleteUser: React.FC = () => {
-  const [message, setMessage] = useState<string>("");
+export const useDeleteUser = () => {
   const token = useSelector((state: RootState) => state.user.token);
+  const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
 
   const handleDelete = async () => {
     if (token) {
       try {
         await deleteUser(token);
-        setMessage("User deleted successfully");
+        dispatch(logoutUser());
+        navigate("/login");
       } catch (error) {
-        setMessage("Failed to delete user");
         console.error("Delete Error:", error);
+        throw new Error("Failed to delete user");
       }
     }
   };
 
-  return (
-    <div>
-      <button onClick={handleDelete}>Delete My Account</button>
-      {message && <p>{message}</p>}
-    </div>
-  );
+  return { handleDelete };
 };
-
-export default DeleteUser;

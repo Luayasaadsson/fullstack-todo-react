@@ -27,21 +27,36 @@ function TodoForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Title"
-        required
-      />
-      <textarea
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        placeholder="Content"
-        required
-      />
-      <button type="submit">Add Todo</button>
+    <form
+      onSubmit={handleSubmit}
+      className="bg-blue-300 p-6 rounded-lg shadow-md w-full max-w-sm mx-auto mt-6"
+    >
+      <h2 className="text-2xl mb-4 text-center">Add new todo</h2>
+      <div className="mb-4">
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Title"
+          required
+          className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+        />
+      </div>
+      <div className="mb-4">
+        <textarea
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          placeholder="Content"
+          required
+          className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+        />
+      </div>
+      <button
+        type="submit"
+        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-200"
+      >
+        Add todo
+      </button>
     </form>
   );
 }
