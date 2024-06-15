@@ -25,7 +25,14 @@ router.post("/register", async (req: Request, res: Response) => {
       data: { email, password: hashedPassword },
     });
 
-    return res.status(201).json({ message: `User with id ${user.id} created` });
+    const secret = process.env.JWT_SECRET || "default_secret";
+    const token = jwt.sign({ id: user.id }, secret, {
+      expiresIn: "24h",
+    });
+
+    return res
+      .status(201)
+      .json({ token: token, userId: user.id, email: email });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
