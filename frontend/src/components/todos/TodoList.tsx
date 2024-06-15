@@ -77,7 +77,7 @@ function TodoList() {
     return <div className="text-center text-red-500 mt-4">Error: {error}</div>;
 
   return (
-    <div className="flex flex-col items-center p-6 bg-blue-300 rounded-lg">
+    <div className="flex flex-col items-center p-2 bg-blue-300 rounded-lg">
       <div className="w-full max-w-2xl">
         {todos.length === 0 ? (
           <div className="text-center">No todos found</div>
@@ -92,28 +92,28 @@ function TodoList() {
               <p className={todo.completed ? "text-green-500" : "text-red-500"}>
                 {todo.completed ? "Completed" : "Not Completed"}
               </p>
-              <div className="flex flex-wrap space-x-2 mt-4">
+              <div className="flex flex-wrap mt-4 gap-2">
                 <button
                   onClick={() => startEditing(todo)}
-                  className="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600 transition duration-200"
+                  className="bg-yellow-500 text-white py-2 px-2 rounded-lg hover:bg-yellow-600 transition duration-200"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => toggleCompleted(todo)}
-                  className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-200"
+                  className="bg-blue-500 text-white py-2 px-2 rounded-lg hover:bg-blue-600 transition duration-200"
                 >
-                  {todo.completed ? "Mark Incomplete" : "Mark Complete"}
+                  {todo.completed ? "Incomplete" : "Complete"}
                 </button>
                 <button
                   onClick={() => handleDelete(todo.id)}
-                  className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition duration-200"
+                  className="bg-red-500 text-white py-2 px-2 rounded-lg hover:bg-red-600 transition duration-200"
                 >
                   Delete
                 </button>
               </div>
               {editingTodo?.id === todo.id && (
-                <div className="bg-gray-100 p-6 rounded-lg shadow-md mt-4">
+                <div className="bg-blue-300 p-6 rounded-lg shadow-md mt-4">
                   <h3 className="text-2xl mb-4 text-center">Edit Todo</h3>
                   <div className="mb-4">
                     <input

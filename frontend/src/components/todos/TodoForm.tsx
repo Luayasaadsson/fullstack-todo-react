@@ -39,7 +39,7 @@ function TodoForm() {
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Title"
           required
-          className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+          className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
         />
       </div>
       <div className="mb-4">
@@ -48,12 +48,12 @@ function TodoForm() {
           onChange={(e) => setContent(e.target.value)}
           placeholder="Content"
           required
-          className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+          className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
         />
       </div>
       <button
         type="submit"
-        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-200"
+        className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200"
       >
         Add todo
       </button>

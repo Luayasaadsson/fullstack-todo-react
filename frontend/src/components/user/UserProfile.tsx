@@ -65,13 +65,13 @@ const UserProfile: React.FC = () => {
       <div className="flex gap-4">
         <button
           onClick={handleLogout}
-          className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
+          className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-200"
         >
           Log out
         </button>
         <button
           onClick={handleDeleteUser}
-          className="mt-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-200"
+          className="mt-4 bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition duration-200"
         >
           Delete account
         </button>
