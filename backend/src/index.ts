@@ -5,9 +5,9 @@ import userRoutes from "./routes/users";
 import todoRoutes from "./routes/todos";
 
 const app = express();
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = process.env.PORT || 3000;
 
-/* const corsOptions = {
+const corsOptions = {
   origin: [
     "http://localhost:5500",
     "http://127.0.0.1:5500",
@@ -16,10 +16,9 @@ const PORT = Number(process.env.PORT) || 3000;
   optionsSuccessStatus: 200,
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
-}; */
+};
 
-/* app.use(cors(corsOptions)); */
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // Routes
@@ -30,6 +29,6 @@ app.use("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
