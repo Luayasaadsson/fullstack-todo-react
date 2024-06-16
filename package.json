@@ -3,14 +3,11 @@
   "version": "1.0.0",
   "description": "This is a fullstack project that consists of a backend and a frontend, both using TypeScript.",
   "scripts": {
-    "install:backend": "cd backend && npm install",
-    "install:frontend": "cd frontend && npm install",
-    "build:backend": "cd backend && npm install && npx prisma generate && npx prisma migrate deploy && tsc",
-    "start:backend": "cd backend && node dist/index.js",
+    "build:backend": "cd backend && npm install && npx prisma generate && npx prisma migrate deploy",
+    "start:backend": "cd backend && npm start",
     "build:frontend": "cd frontend && npm install && npm run build",
-    "start:frontend": "cd frontend && npm run preview",
+    "start:frontend": "cd frontend && npm start",
     "build": "npm run build:backend && npm run build:frontend",
-    "start": "npm run start:backend & npm run start:frontend",
-    "deploy": "npm run build && npm run start"
+    "start": "npm run start:backend & npm run start:frontend"
   }
 }
