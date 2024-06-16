@@ -5,7 +5,7 @@ import userRoutes from "./routes/users";
 import todoRoutes from "./routes/todos";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 const corsOptions = {
   origin: [
@@ -25,6 +25,6 @@ app.use(bodyParser.json());
 app.use("/users", userRoutes);
 app.use("/todos", todoRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
