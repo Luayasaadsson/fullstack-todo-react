@@ -9,7 +9,7 @@ const cors_1 = __importDefault(require("cors"));
 const users_1 = __importDefault(require("./routes/users"));
 const todos_1 = __importDefault(require("./routes/todos"));
 const app = (0, express_1.default)();
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT) || 3000;
 const corsOptions = {
     origin: [
         "http://localhost:5500",
@@ -28,6 +28,6 @@ app.use("/todos", todos_1.default);
 app.use("/", (req, res) => {
     res.send("Hello World!");
 });
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server is running on port ${PORT}`);
 });
