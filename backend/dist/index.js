@@ -25,6 +25,9 @@ app.use(body_parser_1.default.json());
 // Routes
 app.use("/users", users_1.default);
 app.use("/todos", todos_1.default);
+app.use("/", (req, res) => {
+    res.send("Hello World!");
+});
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
