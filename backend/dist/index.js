@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const cors_1 = __importDefault(require("cors"));
+const auth_1 = require("./middleware/auth");
 const users_1 = __importDefault(require("./routes/users"));
 const todos_1 = __importDefault(require("./routes/todos"));
 const app = (0, express_1.default)();
@@ -14,6 +15,7 @@ const corsOptions = {
     origin: [
         "http://localhost:5500",
         "http://127.0.0.1:5500",
+        "http://localhost:5173",
         "https://fullstack-todolist-react.netlify.app",
     ],
     optionsSuccessStatus: 200,
@@ -24,7 +26,7 @@ app.use((0, cors_1.default)(corsOptions));
 app.use(body_parser_1.default.json());
 // Routes
 app.use("/users", users_1.default);
-app.use("/todos", todos_1.default);
+app.use("/todos", auth_1.auth, todos_1.default);
 app.use("/", (req, res) => {
     res.send("Hello World!");
 });

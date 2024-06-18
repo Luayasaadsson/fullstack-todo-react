@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
+import { auth } from "./middleware/auth";
 import userRoutes from "./routes/users";
 import todoRoutes from "./routes/todos";
 
@@ -11,6 +12,7 @@ const corsOptions = {
   origin: [
     "http://localhost:5500",
     "http://127.0.0.1:5500",
+    "http://localhost:5173",
     "https://fullstack-todolist-react.netlify.app",
   ],
   optionsSuccessStatus: 200,
@@ -23,7 +25,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use("/users", userRoutes);
-app.use("/todos", todoRoutes);
+app.use("/todos", auth, todoRoutes);
 
 app.use("/", (req, res) => {
   res.send("Hello World!");
