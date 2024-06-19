@@ -1,9 +1,12 @@
+import cors from "cors";
+import dotenv from "dotenv";
 import express from "express";
 import bodyParser from "body-parser";
-import cors from "cors";
 import { auth } from "./middleware/auth";
 import userRoutes from "./routes/users";
 import todoRoutes from "./routes/todos";
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
