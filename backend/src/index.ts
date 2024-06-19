@@ -9,7 +9,7 @@ import todoRoutes from "./routes/todos";
 dotenv.config();
 
 const app = express();
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
   origin: [
@@ -34,6 +34,6 @@ app.use("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
