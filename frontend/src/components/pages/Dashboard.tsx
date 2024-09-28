@@ -23,7 +23,7 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-blue-500 p-4 flex flex-col items-center justify-center">
+<div className="min-h-screen bg-[linear-gradient(to_bottom,#0F2027,#203A43,#2C5364)] flex flex-col items-center justify-center">
       <div className="text-4xl md:text-5xl lg:text-6xl mb-6 text-white text-center">
         <p>Welcome back</p>
       </div>
