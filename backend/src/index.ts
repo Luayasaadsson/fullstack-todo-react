@@ -20,13 +20,11 @@ const corsOptions = {
     "http://todo-list-2314.s3-website.eu-north-1.amazonaws.com",
   ],
   optionsSuccessStatus: 200,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 };
 
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
 app.use(bodyParser.json());
 
 // Routes
