@@ -17,6 +17,7 @@ const corsOptions = {
     "http://127.0.0.1:5500",
     "http://localhost:5173",
     "https://fullstack-todolist-react.netlify.app",
+    "http://todo-list-2314.s3-website.eu-north-1.amazonaws.com",
   ],
   optionsSuccessStatus: 200,
   methods: ["GET", "POST", "PUT", "DELETE"],
